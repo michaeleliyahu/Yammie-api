@@ -14,7 +14,16 @@ router.post("/", async (req,res) => {
 // router.get("/usertest", (req, res) => {
 //     res.send("test goos");
 // });
+// //GET ALL
 
+router.get("/", async (req, res) => {
+    try {
+      const order = await Order.find();
+      res.status(200).json(order);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 
 module.exports = router;

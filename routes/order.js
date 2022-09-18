@@ -11,11 +11,7 @@ router.post("/", async (req,res) => {
     }
 });
 
-// router.get("/usertest", (req, res) => {
-//     res.send("test goos");
-// });
 // //GET ALL
-
 router.get("/", async (req, res) => {
     try {
       const order = await Order.find();

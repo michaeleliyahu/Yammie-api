@@ -5,8 +5,6 @@ const dotenv = require("dotenv")
 const orderRoute = require("./routes/order");
 const morgan = require("morgan");
 
-
-
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URL)
@@ -38,3 +36,5 @@ app.use((error, req, res, next) => {
 app.listen(5000, ()=>{
     console.log("Backend server running");
 })
+
+module.exports = app

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Order = require("../models/Order");
+const moment = require("moment");
 const CreateError = require("http-errors");
 
 router.post("/", async (req, res, next) => {
@@ -21,7 +22,13 @@ router.post("/", async (req, res, next) => {
 // //GET ALL
 router.get("/", async (req, res) => {
     try {
-      const order = await Order.find();
+      const order = await Order.find(
+        {
+          createdAt:{
+            $gte: moment().add(-1,"day"),
+          }
+        }
+      );
       res.status(200).json(order);
       console.log("Getting list of all Order");
     } catch (err) {

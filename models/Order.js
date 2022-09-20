@@ -8,5 +8,6 @@ const orderSchema = new mongoose.Schema({
     note:{type: String, required:false}
     },
 );
+orderSchema.set('timestamps', true);
 
 module.exports = mongoose.model("Order", orderSchema);

@@ -3,7 +3,7 @@ const Order = require("../models/Order");
 const moment = require("moment");
 const CreateError = require("http-errors");
 
-router.post("/", async (req, res, next) => {
+router.post("/saveOrder", async (req, res, next) => {
     try{
         const newOrder = new Order(req.body);
         const savedOrder = await newOrder.save();
@@ -20,7 +20,7 @@ router.post("/", async (req, res, next) => {
 });
 
 // //GET ALL
-router.get("/", async (req, res) => {
+router.get("/getTodayOrder", async (req, res) => {
     try {
       const order = await Order.find(
         {

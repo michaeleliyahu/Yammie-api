@@ -30,7 +30,13 @@ router.get("/", async (req, res) => {
         }
       );
       res.status(200).json(order);
-      console.log("Getting list of all Order");
+      if(order.length == 0)
+      {
+        console.log("We dont have order from today");
+      }
+      else{
+        console.log("Getting list of all Order" + "\n" + "There is "+ order.length + " order today");
+      }
     } catch (err) {
       res.status(500).json(err);
     }

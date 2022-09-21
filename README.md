@@ -1,18 +1,20 @@
 # Yammie-api
+## Technologies
+***
+A list of technologies used within the project:
+* Server: Express (NodeJS)
+* DataBase: MongoDB by using Mongoose
+* Unit test: Mocha and Chai
+* HTTP error: Handle error by using http-error package
 
-**Instruction**
+## Instructions
+***
+* I used MongoDB in this project<br />Therefor, if you want to send POST/GET request you need to put your URL in .env file to connect data base.
+* for run the server<br />```npm start```
+* for run the tests<br />```npm test```<br /><br />
 
-I used MongoDB in this project<br />
-Therefor, if you want to send POST/GET request you need to put your URL in .env file to connect data base.
-
-for run the server<br />
-```npm start```
-
-for run the tests<br />
-```npm test```<br /><br />
-
-**operations**
-
+## operations
+***
 To send post request and save new order.<br />
 http://localhost:5000/api/order/saveOrder<br />
 

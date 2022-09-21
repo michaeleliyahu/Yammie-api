@@ -10,7 +10,13 @@ dotenv.config();
 mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log("DataBase connection successful"))
 .catch((err) => {
-    console.log(err);
+    if(process.env.MONGO_URL === "<URL>")
+    {
+        console.log("missing URL: go to .env file and put your mongoDB URL and save");
+    }
+    else{
+        console.log(err);
+    }
 });
 
 app.use(morgan('dev'));
